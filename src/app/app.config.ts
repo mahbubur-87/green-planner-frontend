@@ -7,9 +7,9 @@ import { RailKitApiManagerConfig } from "./services/train-itineraries/train-itin
 export const amadeusApiConfig: ApiManagerConfig = {
   gatewayUrl: 'https://test.api.amadeus.com/v1/security/oauth2',
   // TODO How to find your credentials: https://developers.amadeus.com/register
-  gatewayClientId: 'YOUR_API_KEY',
-  gatewayClientPrivate: 'YOUR_API_SECRET',
-  
+  gatewayClientId: '2NFisooZmABHlSqYFIbLmU8pCWNQDK5E',
+  gatewayClientPrivate: 'ABG1bujig0lkKnfN',
+
 
   // Test API
   maximumConcurrentCalls: 1,
@@ -29,5 +29,5 @@ export const railKitApiConfig: RailKitApiManagerConfig =
 // Configuration to connect to Woosmap API
 export const woosmapApiConfig: WoosmapConfig = {
   // TODO: more information about how to get your key: https://developers.woosmap.com/get-started/#before-you-start
-  apiKey: 'YOUR_WOOSMAP_KEY'
+  apiKey: "woos-13a3bc9e-a0d3-3de5-8452-c1565868aa32"
 }
