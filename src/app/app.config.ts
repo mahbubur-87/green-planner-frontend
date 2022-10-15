@@ -23,7 +23,7 @@ export const railKitApiConfig: RailKitApiManagerConfig =
   organization:"'RAIL-SBB'",
   userId:"USSBBRAILK",
   officeID:"BRN2S78AG",
-  password : 'ASKFORPWD' //TODO ask your rail mentors  for the password
+  password : 'Amadeus@20'
 }
 
 // Configuration to connect to Woosmap API

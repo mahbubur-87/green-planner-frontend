@@ -9,6 +9,7 @@ const routes: Routes = [
   },
   {path: 'search', loadChildren: () => import('./pages/search-page/search-page.module').then(m => m.SearchPageModule)},
   { path: 'TrainItineraries', loadChildren: () => import('./pages/train-itineraries/train-itineraries.module').then(m => m.TrainItinerariesModule) },
+  { path: 'Signup', loadChildren: () => import('./pages/signup-page/signup-page.module').then(m => m.SignupPageModule) },
 
   {path: '**', redirectTo: 'home'}
 ];
