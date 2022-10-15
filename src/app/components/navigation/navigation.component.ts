@@ -14,6 +14,7 @@ export class NavigationComponent {
 
   navigationItems = [
     {label: 'Home', icon: 'home', path: '/home'},
+    {label: 'User Profile', icon: 'pi pi-user', path: '/profile'},
     {label: 'Inspire me', icon: 'emoji_objects', path: '/inspire'},
     {label: 'Find flights', icon: 'search', path: '/search'},
     {label: 'Find Trains', icon: 'search', path: '/TrainItineraries'},

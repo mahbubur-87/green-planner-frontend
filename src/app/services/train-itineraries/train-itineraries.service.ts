@@ -16,9 +16,9 @@ export interface itinerary {
   destination:{
     name:string
   },
-  departureDateTime: Date, 
+  departureDateTime: Date,
   arrivalDateTime: Date
-  
+
 }
 
 @Injectable({
@@ -28,7 +28,7 @@ export class TrainItinerariesService {
 
   constructor(@Inject(RAILKIT_API_MANAGER_CONFIG_TOKEN) private railKitApiConfig: RailKitApiManagerConfig) {
   }
- 
+
   /**
    * API call to retrieve train itineraries
    */
@@ -36,11 +36,11 @@ export class TrainItinerariesService {
     const time = new Date().toISOString();
     //Compute the needed authorization token.
     //All credentials details are set in app.config.ts
-    //More deatils in documentation: https://github.com/amadeus4dev-events/Developer-guide/blob/main/RailkitApi/README.md 
+    //More deatils in documentation: https://github.com/amadeus4dev-events/Developer-guide/blob/main/RailkitApi/README.md
     //and in https://github.com/amadeus4dev-events/Developer-guide/blob/main/RailkitApi/1AAuth.docx
-    const http1AAuth=this.compute1aAuth(this.railKitApiConfig.userId,this.railKitApiConfig.password, 
+    const http1AAuth=this.compute1aAuth(this.railKitApiConfig.userId,this.railKitApiConfig.password,
       this.railKitApiConfig.organization,this.createNonce(16),this.railKitApiConfig.officeID, time)
-    
+
     //Call Railkit API in order to search for itineraries
     //Below example is hardcoding the origin (8727100 =Paris), detination (7015550 = London) and departure  (2022-10-16T10:33:00)
     //Details about the API in https://github.com/amadeus4dev-events/Developer-guide/blob/main/RailkitApi/README.md
@@ -51,7 +51,7 @@ export class TrainItinerariesService {
         'Content-Type': 'application/json',
         'Authorization': '1AAuth ' + http1AAuth,
         'x-1a-replyoptions': 'NoCache',
-        'Ama-Client-Ref': 'YOURTEAMNAME', //TODO put your team  name here
+        'Ama-Client-Ref': 'GREENPLANNER', //TODO put your team  name here
         'Cache-Control': 'no-cache',
         'Host': 'noded1.test.api.amadeus.com',
         'Accept-Encoding': 'gzip, deflate, br',
@@ -60,7 +60,7 @@ export class TrainItinerariesService {
       body: JSON.stringify({
         "searchCriteria" : {
         "distributor" : "SBB", //Keep SBB
-        "language" : "EN",   //Keep EN 
+        "language" : "EN",   //Keep EN
         "origin" : "8727100",   //TODO use input value
         "destination" : "7015550", //TODO use input values
         "dateTime" : {
@@ -76,10 +76,10 @@ export class TrainItinerariesService {
         }
         })
     });
-    //NOTICE: here we are not targetting the amadeus server (noded1.test.api.amadeus.com) directly. 
+    //NOTICE: here we are not targetting the amadeus server (noded1.test.api.amadeus.com) directly.
     //the call to noded1.test.api.amadeus.com should be done in your local server and not by your browser
     //In Angular it is achieved thanks to a proxy. See proxconfig.json for the mapping between RailKitAPI and noded1.test.api.amadeus.com
-    //Reference: https://dev-academy.com/angular-cors/ 
+    //Reference: https://dev-academy.com/angular-cors/
 
 
 
