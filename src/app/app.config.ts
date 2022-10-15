@@ -6,7 +6,6 @@ import { RailKitApiManagerConfig } from "./services/train-itineraries/train-itin
 // Configuration to connect to the Amadeus API
 export const amadeusApiConfig: ApiManagerConfig = {
   gatewayUrl: 'https://test.api.amadeus.com/v1/security/oauth2',
-  // TODO How to find your credentials: https://developers.amadeus.com/register
   gatewayClientId: '2NFisooZmABHlSqYFIbLmU8pCWNQDK5E',
   gatewayClientPrivate: 'ABG1bujig0lkKnfN',
 

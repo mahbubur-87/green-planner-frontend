@@ -11,23 +11,28 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { ApiManagerModule } from './services/api-manager';
 import { WOOSMAP_CONFIG_TOKEN } from "./services/woosmap/woosmap.tokens";
 import { RAILKIT_API_MANAGER_CONFIG_TOKEN } from './services/train-itineraries/train-itineraries.tokens';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TicketService } from './pages/signup-page/ticketservice';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import {CheckboxModule} from 'primeng/checkbox';
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    LoginPageComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    ApiManagerModule.forRoot(amadeusApiConfig),
-    MatListModule,
-    MatIconModule,
-    MatButtonModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        ApiManagerModule.forRoot(amadeusApiConfig),
+        MatListModule,
+        MatIconModule,
+        MatButtonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        CheckboxModule
+    ],
   providers: [
     TicketService,
     {provide: WOOSMAP_CONFIG_TOKEN, useValue: woosmapApiConfig},

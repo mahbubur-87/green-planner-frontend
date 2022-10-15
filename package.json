@@ -24,6 +24,7 @@
     "@angular/router": "^14.2.0",
     "@dapi/amadeus-gateway-sdk": "^1.1.7",
     "@dapi/sdk-core": "^3.3.4",
+    "bootstrap": "^5.2.2",
     "crypto-js": "^4.1.1",
     "isomorphic-fetch": "^3.0.0",
     "primeicons": "^6.0.1",
