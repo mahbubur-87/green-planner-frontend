@@ -1,0 +1,38 @@
+<div class="stepsdemo-content">
+  <p-card>
+    <ng-template pTemplate="title">
+      Confirmation
+    </ng-template>
+    <ng-template pTemplate="subtitle">
+      Enter your card details
+    </ng-template>
+    <ng-template pTemplate="content">
+      <div class="field col-12">
+        <label for="class">Name</label>
+        <b>{{ticketInformation.personalInformation.firstname ? ticketInformation.personalInformation.firstname : '-'}} {{ticketInformation.personalInformation.lastname ? ticketInformation.personalInformation.lastname : '-'}}</b>
+      </div>
+      <div class="field col-12">
+        <label for="Age">Age</label>
+        <b>{{ticketInformation.personalInformation.age ? ticketInformation.personalInformation.age : '-'}}</b>
+      </div>
+      <div class="field col-12">
+        <label for="Age">Seat Class</label>
+        <b>{{ticketInformation.moreInformation.class ? ticketInformation.moreInformation.class.name : '-'}}</b>
+      </div>
+      <div class="field col-12">
+        <label for="Age">Wagon Number</label>
+        <b>{{ticketInformation.moreInformation.wagon ? ticketInformation.moreInformation.wagon.wagon : '-'}}</b>
+      </div>
+      <div class="field col-12">
+        <label for="Age">Seat</label>
+        <b>{{ticketInformation.moreInformation.more ? ticketInformation.moreInformation.more.more : '-'}}</b>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <div class="grid grid-nogutter justify-content-end">
+        <p-button label="Back" (onClick)="prevPage()" icon="pi pi-angle-left"></p-button>
+        <p-button label="Complete" (onClick)="complete()" icon="pi pi-angle-right" iconPos="right" styleClass="p-button-success"></p-button>
+      </div>
+    </ng-template>
+  </p-card>
+</div>
