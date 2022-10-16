@@ -14,11 +14,11 @@ export class NavigationComponent {
 
   navigationItems = [
     {label: 'Home', icon: 'home', path: '/home'},
-    {label: 'User Profile', icon: 'pi pi-user', path: '/profile'},
+    {label: 'User Profile', icon: 'account_circle', path: '/profile'},
     {label: 'Inspire me', icon: 'emoji_objects', path: '/inspire'},
-    {label: 'Find flights', icon: 'search', path: '/search'},
+    {label: 'Find flights', icon: 'flight_takeoff', path: '/search'},
     {label: 'Find Trains', icon: 'search', path: '/TrainItineraries'},
-    {label: 'Sign up', icon: 'pi  pi-user', path: '/Signup'}
+    {label: 'Sign up', icon: 'person_add', path: '/Signup'}
   ];
 
   /**

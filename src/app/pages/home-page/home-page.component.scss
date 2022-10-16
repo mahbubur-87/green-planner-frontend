@@ -1,5 +1,10 @@
 .home-container {
-  padding: 1rem 2rem;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: -moz-available;
+  }
 }
 
 button.mat-flat-button.mat-primary {
@@ -12,6 +17,8 @@ button.mat-flat-button.mat-primary {
   background: url("../../../assets/pexels-lara-jameson-8828602.jpg") no-repeat center;
   background-size: cover;
   padding: 0 0 3rem;
+
+
 
   h2 {
     text-align: center;
