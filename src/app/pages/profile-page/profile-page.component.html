@@ -1,0 +1,80 @@
+<div class="card">
+  <p-splitter [style]="{'height': 'auto'}" styleClass="mb-5" layout="vertical">
+    <ng-template pTemplate>
+
+
+        <div class="col flex align-items-center justify-content-center">
+          <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge" [style]="{'background-color': '#9c27b0', 'color': '#ffffff'}"></p-avatar>
+          <h2>Mouad KHALD</h2>
+          <div class="flex align-items-center justify-content-center">
+            <p-chip label="Junior" image="assets/greenplanner.svg" styleClass="mr-2" [style]=" {'background': '#26434A', 'color': '#ffffff'}"></p-chip>
+            <p-chip label="358" image="assets/greenplanner.svg" styleClass="mr-2" [style]="{'background': '#26434A', 'color': '#ffffff'}" ></p-chip>
+          </div>
+
+
+        </div>
+        <div class="col flex align-items-center justify-content-center" style="padding-left: 200px">
+          <h5>Total of CO2 reduced</h5>
+          <p-progressBar value="20" unit="kg/CO2"  ></p-progressBar>
+        </div>
+
+    </ng-template>
+    <ng-template pTemplate>
+      <div class="col flex align-items-center justify-content-center w-4rem h-4rem">
+        <p-tabView>
+          <p-tabPanel header="Challenges" leftIcon="pi pi-calendar" tooltip="Challenges list">
+            <div class="field-checkbox">
+              <p-checkbox name="group1" value="New York" [(ngModel)]="selectedChallenge" inputId="ny"></p-checkbox>
+              <label for="ny">Unlock electric scooter for 1 hour</label>
+            </div>
+            <div class="field-checkbox">
+              <p-checkbox name="group1" value="San Francisco" [(ngModel)]="selectedChallenge" inputId="sf"></p-checkbox>
+              <label for="sf">Reduce your footprint 50g/CO2 per day</label>
+            </div>
+            <div class="field-checkbox">
+              <p-checkbox name="group1" value="Los Angeles" [(ngModel)]="selectedChallenge" inputId="la"></p-checkbox>
+              <label for="la">Walk 10km per day</label>
+            </div>
+            <div class="field-checkbox">
+              <p-checkbox name="group1" value="Chicago" [(ngModel)]="selectedChallenge" inputId="ch"></p-checkbox>
+              <label for="ch">Use train by December</label>
+            </div>
+          </p-tabPanel>
+          <p-tabPanel header="History" rightIcon="pi pi-inbox" tooltip="Your history">
+            <p-table [value]="travels">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>Name</th>
+                  <th>Destination</th>
+                  <th>Date</th>
+                  <th>Challenge accomplished</th>
+                  <th>Emission CO2</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-travels>
+                <tr>
+                  <td>
+                    {{travels.name}}
+                  </td>
+                  <td>
+                    <span class="image-text">{{travels.country}}</span>
+                  </td>
+                  <td>
+                    {{travels.date| date: 'MM/dd/yyyy'}}
+                  </td>
+                  <td>
+                    {{travels.challenge}}
+                  </td>
+                  <td>
+                    <p-tag styleClass="mr-2" severity="success" value="Good job {{travels.status}}"></p-tag>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </p-tabPanel>
+        </p-tabView>
+      </div>
+    </ng-template>
+  </p-splitter>
+
+</div>
